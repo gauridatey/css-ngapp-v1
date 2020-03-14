@@ -7,7 +7,11 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build:qa": "ng build --configuration=qa",
+    "build:prod": "ng build --prod",
+    "start:qa": "ng serve --configuration=qa --port 6200",
+    "start:prod": "ng serve --configuration=production --port 5200"
   },
   "private": true,
   "dependencies": {
