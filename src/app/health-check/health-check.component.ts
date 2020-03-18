@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HealthCheckService } from './health-check.service';
+import { NGXLogger } from 'ngx-logger';
 
 @Component({
   selector: 'app-health-check',
@@ -9,7 +10,7 @@ import { HealthCheckService } from './health-check.service';
 export class HealthCheckComponent implements OnInit {
   result: string;
 
-  constructor(private healthCheckService: HealthCheckService) {}
+  constructor(private healthCheckService: HealthCheckService, private logger: NGXLogger, ) {}
 
   ngOnInit() {
     this.getServerHealthCheck();
@@ -20,6 +21,7 @@ export class HealthCheckComponent implements OnInit {
       .getServerHealthCheck()
       .subscribe(
         (response: any) => {
+          this.logger.debug('Response received from server [' + response.message + ']');
           this.result = response.message;
         },
         () => {}
