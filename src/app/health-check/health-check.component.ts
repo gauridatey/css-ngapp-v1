@@ -10,21 +10,19 @@ import { NGXLogger } from 'ngx-logger';
 export class HealthCheckComponent implements OnInit {
   result: string;
 
-  constructor(private healthCheckService: HealthCheckService, private logger: NGXLogger, ) {}
+  constructor(private healthCheckService: HealthCheckService, private logger: NGXLogger) {}
 
   ngOnInit() {
     this.getServerHealthCheck();
   }
 
   getServerHealthCheck() {
-    this.healthCheckService
-      .getServerHealthCheck()
-      .subscribe(
-        (response: any) => {
-          this.logger.debug('Response received from server [' + response.message + ']');
-          this.result = response.message;
-        },
-        () => {}
-      );
+    this.healthCheckService.getServerHealthCheck().subscribe(
+      (response: any) => {
+        this.logger.debug('Response received from server [' + response.message + ']');
+        this.result = response.message;
+      },
+      () => {}
+    );
   }
 }
