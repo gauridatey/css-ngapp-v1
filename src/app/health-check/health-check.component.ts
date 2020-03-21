@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HealthCheckService } from './health-check.service';
 import { NGXLogger } from 'ngx-logger';
+import { ToastMessageService } from '../shared/message/toast-message.service';
+import { AlertMessageService } from '../shared/message/alert-message.service';
 
 @Component({
   selector: 'app-health-check',
@@ -10,7 +12,12 @@ import { NGXLogger } from 'ngx-logger';
 export class HealthCheckComponent implements OnInit {
   result: string;
 
-  constructor(private healthCheckService: HealthCheckService, private logger: NGXLogger) {}
+  constructor(
+    private healthCheckService: HealthCheckService,
+    private toastMessageService: ToastMessageService,
+    private alertMessageService: AlertMessageService,
+    private logger: NGXLogger
+  ) {}
 
   ngOnInit() {
     this.getServerHealthCheck();
@@ -21,6 +28,8 @@ export class HealthCheckComponent implements OnInit {
       (response: any) => {
         this.logger.debug('Response received from server [' + response.message + ']');
         this.result = response.message;
+        this.toastMessageService.success(this.result);
+        this.alertMessageService.success(this.result);
       },
       () => {}
     );
