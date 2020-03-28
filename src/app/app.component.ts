@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'css-ngapp-v1';
+  todayDate: Date = new Date();
 }
