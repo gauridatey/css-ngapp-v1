@@ -1,10 +1,12 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
+import { APP_BASE_HREF } from '@angular/common';
+import { HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ConstantService {
-  constructor() {}
+  constructor(@Inject(APP_BASE_HREF) public baseHref: string) {}
 
   // alert and toast messages
   public MESSAGE_DISPLAY_TYPE_ALERT = 'alert';
@@ -27,5 +29,19 @@ export class ConstantService {
       return inputText.charAt(0).toUpperCase() + inputText.slice(1);
     }
     return inputText;
+  }
+
+  addHttptHeader(): HttpHeaders {
+    let headers = new HttpHeaders();
+    let selectedLang = this.removeFirstAndLastSlash(this.baseHref).trim();
+    if (!this.removeFirstAndLastSlash(this.baseHref)) {
+      selectedLang = 'en';
+    }
+    headers = headers.append('Accept-Language', selectedLang);
+    return headers;
+  }
+
+  removeFirstAndLastSlash(tobeConvertedString: string): string {
+    return tobeConvertedString.replace(/^\/|\/$/g, '');
   }
 }
