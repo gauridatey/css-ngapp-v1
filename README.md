@@ -1,27 +1,66 @@
-# CssNgappV1
+# Css Angular UI App - Bootstrap template
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.4.
+This is developed as part of a course "Build MEAN Stack Bootstrap Project From Scratch" (https://ecokrypt.com/dashboard/course/detail/5e59d95f00190207e65d9e8b/Build%20MEAN%20Stack%20Bootstrap%20Project%20from%20scratch)
 
-## Development server
+## Preferred IDE:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Visual Studio Code.
 
-## Code scaffolding
+## IDE Extensions required:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+a) Beautify
+b) Prettier
+c) TSLint
+d) Debugger for Chrome
 
-## Build
+## Features developed
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+- Initialization
+- Health check module
+- Standards
+- Consider different environment
+- Incorporate logging
+- Code format & quality with pre-commit hook
+- Debug using VS Code
+- Alert & toast messages
+- Exception handling
+- Documentation
+- I18n
 
-## Running unit tests
+## Prerequisite:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- node/npm/angular-cli/git is already installed.
+- I have tested using
+  - Git (v2.23.0)
+  - Node/NPM (v12.16.1 / 6.13.4)
+  - Angular-cli (v9.0.4)
+  - Mongo DB (v4.2.3) - Required for corresponding node api server css-nodeserver-v1
+- Project has been created using angular-cli version 9.0.4
 
-## Running end-to-end tests
+## Steps to run:
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+1) clone it to your project repo directory
 
-## Further help
+   <project repo dir>\$ git clone https://github.com/gauridatey/css-ngapp-v1.git
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+2) cd to css-ngapp-v1/
+
+3) Install required packages
+   
+   css-ngapp-v1\$ npm install
+
+4) To run locally for english language
+   
+   css-ngapp-v1\$ npm run start
+
+5) To run locally for french language
+   
+   css-ngapp-v1\$ npm run start-fr
+
+6) To run locally for marathi (Indian) language
+   
+   css-ngapp-v1\$ npm run start-mr
+
+7) Angular will be running on http://localhost:4200 for english, http://localhost:4201/fr for french and http://localhost:4202 for marathi
+
+8) /healthcheck route can be used to check connectivity with corresponding node api server css-nodeserver-v1
