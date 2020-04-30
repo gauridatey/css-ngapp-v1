@@ -48,7 +48,7 @@
     "@ngx-i18nsupport/tooling": "^8.0.3",
     "@ngx-translate/i18n-polyfill": "^1.0.0",
     "bootstrap": "^4.4.1",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "ngx-logger": "^4.1.2",
     "popper.js": "^1.16.1",
     "rxjs": "~6.5.4",
