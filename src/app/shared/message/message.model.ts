@@ -1,3 +1,3 @@
 export class Message {
-  constructor(private messageText: string, private displayType: string, private messageType: string) {}
+  constructor(public messageText: string, public displayType: string, public messageType: string) {}
 }

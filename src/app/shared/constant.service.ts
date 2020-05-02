@@ -19,10 +19,10 @@ export class ConstantService {
   public MESSAGE_TOAST_TIMEOUT = 2500;
 
   public BACKEND_NOT_FOUND = '404 status has been returned';
-  public UNAUTHORTIZED_ACCESS = '401 status has been returned';
+  public UNAUTHORIZED_ACCESS = '401 status has been returned';
   public FORBIDDEN_ACCESS = '403 status has been returned';
   public BACKEND_SERVER_DOWN = 'Backend server seems to be down, please try again later';
-  public GENERIC_ERROR_MESSAGE = 'Http Error Occured';
+  public GENERIC_ERROR_MESSAGE = 'Http Error Occurred';
 
   public capitalizeFirstLetter(inputText: string) {
     if (inputText && inputText.length > 0) {

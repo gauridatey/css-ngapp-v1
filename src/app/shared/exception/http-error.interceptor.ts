@@ -35,7 +35,7 @@ export class HttpErrorInterceptor implements HttpInterceptor {
               this.router.navigate(['/exception/notfound']);
               break;
             case 401:
-              this.logger.error(this.constantService.UNAUTHORTIZED_ACCESS);
+              this.logger.error(this.constantService.UNAUTHORIZED_ACCESS);
               this.router.navigate(['/exception/unauthorized']);
               break;
             case 403:
